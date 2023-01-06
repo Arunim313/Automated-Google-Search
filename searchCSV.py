@@ -2,13 +2,14 @@ import requests
 import bs4
 import pandas as pd
 
-df = pd.read_csv('channels.csv',encoding= 'unicode_escape')
+df = pd.read_csv('your_csv_file.csv',encoding= 'unicode_escape')
 
-f = open(r'extracted_informa.csv','wb')
+# file where we want to save extracted data
+f = open(r'extracted_info.csv','wb')
 f.write('TEXT EXTRACTED\n'.encode())
  
-for i in range(0, len(df.appbundleid)):
-    text = str(df.appbundleid.loc[i])
+for i in range(0, len(df.coloumn_name)):
+    text = str(df.coloumn_name.loc[i])
     
     url = 'https://google.com/search?q=' + text
 
